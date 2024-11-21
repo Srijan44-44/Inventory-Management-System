@@ -211,6 +211,12 @@
             // Redirect to a specific item page
             window.location.href = `Product.html?id=${id}`;
         }
+        fetch('Index.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('productList').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching products:', error));
     </script>
 </body>
 </html>
